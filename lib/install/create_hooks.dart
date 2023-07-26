@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:git_hooks/git_hooks.dart';
 import 'package:git_hooks/utils/logging.dart';
-import 'package:path/path.dart';
 
 import './hook_template.dart';
 
@@ -24,13 +23,8 @@ class CreateHooks {
     }
 
     ///获取插件包路径
-    targetPath = Utils.getOwnPath() ?? '';
+    targetPath = Utils.getOwnPath() ?? 'hooks/git_hooks.dart';
     var relativePath = '${_rootDir}/${targetPath}';
-    print('relativePath--' + relativePath);
-    var hookFile1 = File(Utils.uri(absolute(_rootDir, relativePath)));
-    print('hookFile1Path--' + hookFile1.path);
-    var hookFile2 = File(Utils.uri(absolute(_rootDir, targetPath)));
-    print('hookFile2Path--' + hookFile1.path);
     var hookFile = File(Utils.uri(targetPath));
     var logger = Logger.standard();
     try {
