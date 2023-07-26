@@ -24,6 +24,7 @@ class CreateHooks {
 
     ///获取插件包路径
     targetPath = (Utils.getOwnPath() ?? '') + 'hooks/git_hooks.dart';
+    print('targetPath---' + targetPath);
     var relativePath = '${_rootDir}/${targetPath}';
     var hookFile = File(Utils.uri(targetPath));
     var logger = Logger.standard();
