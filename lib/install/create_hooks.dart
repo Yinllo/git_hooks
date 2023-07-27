@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:git_hooks/git_hooks.dart';
 import 'package:git_hooks/install/hook_template.dart';
 import 'package:git_hooks/utils/logging.dart';
-import 'package:path/path.dart';
 
 typedef _HooksCommandFile = Future<bool> Function(File file);
 
@@ -23,13 +22,14 @@ class CreateHooks {
     }
 
     ///获取插件包路径
-    // targetPath = (Utils.getOwnPath() ?? '') + 'hooks.dart';
-    // print('targetPath---' + targetPath);
-    // var relativePath = '${_rootDir}/${targetPath}';
-    // var hookFile = File(Utils.uri(targetPath));
-
+    targetPath = (Utils.getOwnPath() ?? '') + 'hooks.dart';
+    print('targetPath---' + targetPath);
     var relativePath = '${_rootDir}/${targetPath}';
-    var hookFile = File(Utils.uri(absolute(_rootDir, relativePath)));
+    var hookFile = File(Utils.uri(targetPath));
+
+    // var relativePath = '${_rootDir}/${targetPath}';
+    // var hookFile = File(Utils.uri(absolute(_rootDir, relativePath)));
+
     var logger = Logger.standard();
     try {
       var commonStr = commonHook(Utils.uri(targetPath));
