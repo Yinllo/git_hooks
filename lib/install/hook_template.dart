@@ -29,7 +29,7 @@ program_exists() {
     return 0
 }
 if program_exists dart; then
-  flutter pub run git_hooks:hooks \$hookName
+  flutter pub run flutter_git_hooks:hooks \$hookName
   if [ "\$?" -ne "0" ];then
     exit 1
   fi
