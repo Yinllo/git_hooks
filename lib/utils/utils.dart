@@ -1,6 +1,7 @@
 import 'dart:io';
-import 'package:path/path.dart' as path;
+
 import 'package:meta/meta.dart';
+import 'package:path/path.dart' as path;
 
 /// return bool function
 typedef UserBackFun = Future<bool> Function();
@@ -21,7 +22,7 @@ class Utils {
     var b = a.split('\n');
     String? resPath;
     b.forEach((v) {
-      if (v.startsWith('git_hooks:')) {
+      if (v.startsWith('flutter_git_hooks:')) {
         var index = v.indexOf(':');
         var lastIndex = v.lastIndexOf('lib');
         resPath = v.substring(index + 1, lastIndex);
