@@ -1,7 +1,9 @@
 import 'dart:io';
 
-import 'package:git_hooks/git_hooks.dart';
-import 'package:git_hooks/install/create_hooks.dart';
+import 'package:flutter_git_hooks/install/create_hooks.dart';
+import 'package:flutter_git_hooks/runtime/git_hooks.dart';
+import 'package:flutter_git_hooks/utils/type.dart';
+import 'package:flutter_git_hooks/utils/utils.dart';
 import 'package:test/test.dart';
 
 void main() {

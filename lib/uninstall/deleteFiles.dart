@@ -1,8 +1,7 @@
 import 'dart:io';
 
-import 'package:git_hooks/utils/logging.dart';
-
 import '../git_hooks.dart';
+import '../utils/logging.dart';
 
 /// delete all file from `.git/hooks`
 Future<bool> deleteFiles() async {

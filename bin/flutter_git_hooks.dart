@@ -1,9 +1,9 @@
 import 'dart:io';
-import 'package:git_hooks/runtime/git_hooks.dart';
-import 'package:git_hooks/utils/utils.dart';
-import 'package:yaml/yaml.dart';
 
-import 'package:git_hooks/install/create_hooks.dart';
+import 'package:flutter_git_hooks/install/create_hooks.dart';
+import 'package:flutter_git_hooks/runtime/git_hooks.dart';
+import 'package:flutter_git_hooks/utils/utils.dart';
+import 'package:yaml/yaml.dart';
 
 void main(List<dynamic>? arguments) {
   if (arguments != null && arguments.isNotEmpty) {
@@ -38,8 +38,7 @@ void main(List<dynamic>? arguments) {
         help();
       }
     } else {
-      print(
-          'Too many positional arguments: 1 expected, but ${arguments.length} found');
+      print('Too many positional arguments: 1 expected, but ${arguments.length} found');
       print('');
       help();
     }

@@ -1,4 +1,4 @@
-import 'package:git_hooks/git_hooks.dart';
+import 'package:flutter_git_hooks/git_hooks.dart';
 
 void main(List arguments) {
   // ignore: omit_local_variable_types
