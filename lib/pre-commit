@@ -1,15 +1,5 @@
 #!/bin/sh
 
-if [ -f ~/.bash_profile ]
-then
-  source ~/.bash_profile
-fi
-if [ -f ~/.zsh_profile ]
-then
-  source ~/.zsh_profile
-fi
-hookName=`basename "$0"`
-gitParams="$*"
 # 用 `` 可以将命令的输出结果赋值给变量
 # 获取当前提交的 commit msg
 commit_msg=`cat $1`
