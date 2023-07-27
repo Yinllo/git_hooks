@@ -1,8 +1,6 @@
 // import 'dart:io';
 
-import 'runtime/git_hooks.dart';
-import 'utils/type.dart';
-import 'utils/utils.dart';
+import 'git_hooks.dart';
 
 void main(List arguments) {
   // ignore: omit_local_variable_types
