@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter_git_hooks/git_hooks.dart';
 
 void main(List arguments) {
@@ -18,12 +20,13 @@ Future<bool> commitMsg() async {
 }
 
 Future<bool> preCommit() async {
-  // try {
-  //   ProcessResult result = await Process.run('dart analyzer', ['bin']);
-  //   print(result.stdout);
-  //   if (result.exitCode != 0) return false;
-  // } catch (e) {
-  //   return false;
-  // }
+  try {
+    // ProcessResult result = await Process.run('dart analyzer', ['bin']);
+    ProcessResult result = Process.runSync('dart', ['analyze'], runInShell: true);
+    print(result.stdout);
+    return !(result.exitCode != 0);
+  } catch (e) {
+    return false;
+  }
   return true;
 }
