@@ -1,9 +1,8 @@
 import 'dart:io';
 
-import 'package:git_hooks/git_hooks.dart';
-import 'package:git_hooks/utils/logging.dart';
-
 import './hook_template.dart';
+import '../git_hooks.dart';
+import '../utils/logging.dart';
 
 typedef _HooksCommandFile = Future<bool> Function(File file);
 
