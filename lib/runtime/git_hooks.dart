@@ -1,9 +1,10 @@
 import 'dart:io';
-import 'package:git_hooks/utils/logging.dart';
-import 'package:git_hooks/utils/type.dart';
-import 'package:git_hooks/install/create_hooks.dart';
-import 'package:git_hooks/uninstall/deleteFiles.dart';
-import 'package:git_hooks/utils/utils.dart';
+
+import '../install/create_hooks.dart';
+import '../uninstall/deleteFiles.dart';
+import '../utils/logging.dart';
+import '../utils/type.dart';
+import '../utils/utils.dart';
 
 /// create files or call hooks functions
 class GitHooks {
@@ -21,15 +22,14 @@ class GitHooks {
         '--source',
         'path',
         Utils.getOwnPath() ?? '',
-      // ignore: body_might_complete_normally_catch_error
+        // ignore: body_might_complete_normally_catch_error
       ]).catchError((onError) {
         print(onError);
       });
       print(result.stdout);
       if (result.stderr.length != 0) {
         print(_ansi.error(result.stderr));
-        print(_ansi.subtle(
-            'You can check \'git_hooks\' in your pubspec.yaml,and use \'pub get\' or \'flutter pub get\' again'));
+        print(_ansi.subtle('You can check \'git_hooks\' in your pubspec.yaml,and use \'pub get\' or \'flutter pub get\' again'));
         exit(1);
       }
       await CreateHooks.copyFile(targetPath: targetPath);
