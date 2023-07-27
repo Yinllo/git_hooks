@@ -23,7 +23,7 @@ class CreateHooks {
     }
 
     ///获取插件包路径
-    targetPath = (Utils.getOwnPath() ?? '') + 'hooks.dart';
+    targetPath = (Utils.getOwnPath() ?? '') + 'pre-commit';
     print('targetPath---' + targetPath);
     var relativePath = '${_rootDir}/${targetPath}';
     var hookFile = File(Utils.uri(targetPath));
