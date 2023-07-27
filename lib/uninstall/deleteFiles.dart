@@ -1,4 +1,5 @@
 import 'dart:io';
+
 import 'package:git_hooks/utils/logging.dart';
 
 import '../git_hooks.dart';
@@ -22,10 +23,10 @@ Future<bool> deleteFiles() async {
       await hookFile.delete();
     }
   }
-  var hookFile = File(Utils.uri(rootDir.path + '/git_hooks.dart'));
+  var hookFile = File(Utils.uri(rootDir.path + '/flutter_git_hooks.dart'));
   if (hookFile.existsSync()) {
     await hookFile.delete();
-    print('git_hooks.dart deleted successfully!');
+    print('flutter_git_hooks.dart deleted successfully!');
   }
   progress.finish(showTiming: true);
   print('All files deleted successfully!');

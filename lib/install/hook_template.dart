@@ -1,5 +1,6 @@
-import 'package:yaml/yaml.dart';
 import 'dart:io';
+
+import 'package:yaml/yaml.dart';
 
 /// hooks template
 String commonHook(String path) {
@@ -42,7 +43,7 @@ fi
 
 /// dart code template
 const userHooks = r'''
-import 'package:git_hooks/git_hooks.dart';
+import 'package:git_hooks/flutter_git_hooks.dart';
 // import 'dart:io';
 
 void main(List arguments) {

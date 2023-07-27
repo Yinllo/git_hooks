@@ -49,7 +49,7 @@ git_hooks create bin/git_hooks.dart
 create `main.dart` file in `/bin/`
 ```dart
 void main() async{
-  GitHooks.init(targetPath: "bin/git_hooks.dart");
+  GitHooks.init(targetPath: "bin/flutter_git_hooks.dart");
 }
 ```
 then `dart bin/main.dart` in shell.
@@ -80,7 +80,7 @@ void main() async{
 You can change `git_hooks.dart`
 
 ```dart
-import "package:git_hooks/git_hooks.dart";
+import "package:git_hooks/flutter_git_hooks.dart";
 import "dart:io";
 
 void main(List arguments) {
@@ -183,7 +183,7 @@ or add Configuration in VSCode
   "configurations": [
     {
       "name": "debugger git hooks",
-      "program": "git_hooks.dart",//your targetFile
+      "program": "flutter_git_hooks.dart",//your targetFile
       "request": "launch",
       "type": "dart",
       "args": ["pre-commit"] // hooks argument

@@ -14,7 +14,7 @@ class GitHooks {
   /// [targetPath] is the absolute path
   static void init({String? targetPath}) async {
     try {
-      await Process.run('git_hooks', ['-v']);
+      await Process.run('flutter_git_hooks', ['-v']);
     } catch (error) {
       var result = await Process.run('pub', [
         'global',

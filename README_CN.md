@@ -61,7 +61,7 @@ git_hooks create {{targetFileName}}
 
 那我们来执行：
 ```shell
-git_hooks create git_hooks.dart
+git_hooks create flutter_git_hooks.dart
 ```
 如果输出
 ```
@@ -73,7 +73,7 @@ All files wrote successful!
 
 打开`git_hooks.dart`文件会看到如下
 ```dart
-import 'package:git_hooks/git_hooks.dart';
+import 'package:git_hooks/flutter_git_hooks.dart';
 // import 'dart:io';
 
 void main(List arguments) {
@@ -125,7 +125,7 @@ Future<bool> commitMsg() async {
 ```
 然后在项目路径的命令行下执行:
 ```shell
-git add git_hooks.dart
+git add flutter_git_hooks.dart
 git commit -m '提交信息'
 ```
 脚本输出如下
@@ -192,7 +192,7 @@ enum Git {
   "configurations": [
     {
       "name": "debugger git hooks",
-      "program": "git_hooks.dart",//your targetFile
+      "program": "flutter_git_hooks.dart",//your targetFile
       "request": "launch",
       "type": "dart",
       "args": ["pre-commit"] // hooks argument
